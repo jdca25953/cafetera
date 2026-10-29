@@ -1,0 +1,2 @@
+ALTER TABLE serving
+    ADD COLUMN cup_size VARCHAR(10) NOT NULL DEFAULT 'MEDIUM' AFTER coffee_name;

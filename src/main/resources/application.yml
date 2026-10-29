@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      url: ${DB_URL:jdbc:mysql://localhost:3307/cafetera?useSSL=false&allowPublicKeyRetrieval=true}
+      username: ${DB_USER:cafetera}
+      password: ${DB_PASSWORD:cafetera}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.jdbc.time_zone: UTC
+
+app:
+  # Valores por defecto SOLO para desarrollo
+  jwt-secret: ${JWT_SECRET:desarrollo-cambia-este-secreto-de-32-caracteres-minimo}
+  jwt-ttl-minutes: 60
+  admin:
+    username: ${ADMIN_USER:admin}
+    password: ${ADMIN_PASSWORD:admin12345}
+  cors-origin: ${CORS_ORIGIN:http://localhost:5173}
