@@ -3,11 +3,11 @@ server:
 
 spring:
   datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/cafetera?useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${DB_USER:cafetera}
+    password: ${DB_PASSWORD:cafetera}
     hikari:
       maximum-pool-size: 5
-      url: ${DB_URL:jdbc:mysql://localhost:3307/cafetera?useSSL=false&allowPublicKeyRetrieval=true}
-      username: ${DB_USER:cafetera}
-      password: ${DB_PASSWORD:cafetera}
   jpa:
     open-in-view: false
     hibernate:
